@@ -1,0 +1,20 @@
+---
+
+- name: ensure ssmtp is installed
+  apt: 
+    name: ssmtp 
+    state: present
+    update_cache: true
+  become: true
+
+- name: configure ssmtp
+  template: 
+    src: ssmtp.conf.j2 
+    dest: /etc/ssmtp/ssmtp.conf
+  become: true
+
+- name: configure aliases
+  template: 
+    src: revaliases.j2 
+    dest: /etc/ssmtp/revaliases
+  become: true

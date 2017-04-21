@@ -1,0 +1,15 @@
+---
+
+ssmtp_smtp_port: 25
+ssmtp_default_recipient: ''
+
+ssmtp_auth_method: LOGIN
+
+ssmtp_host_fqd: '{{ ansible_fqdn }}'
+
+ssmtp_use_tls: no
+ssmtp_use_starttls: no
+
+ssmtp_allow_sender_override: yes
+
+ssmtp_sender_aliases: []
