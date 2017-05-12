@@ -46,7 +46,7 @@ An ansible role to install and configure ssmtp
       - name: root
         alias: aliased@company.tld
       - name: admin
-        alias: Server2<alerts@company.tld>
+        alias: admin.server2@company.tld
     ```
 
 ## Usage Example
@@ -65,7 +65,7 @@ An ansible role to install and configure ssmtp
     ssmtp_allow_sender_override: no
     ssmtp_sender_aliases:
       - name: root
-        alias: '{{ ansible_fqdn }}<alerts@company.tld>'
+        alias: 'root.{{ ansible_fqdn }}@company.tld'
   roles:
     - ssmtp
 ```

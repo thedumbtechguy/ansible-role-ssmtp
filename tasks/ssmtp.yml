@@ -1,5 +1,13 @@
 ---
 
+- name: ensure mailx is installed
+  apt:
+    name: bsd-mailx
+    state: present 
+    update_cache: yes
+    cache_valid_time: 3600
+  become: true
+  
 - name: ensure ssmtp is installed
   apt: 
     name: ssmtp 
